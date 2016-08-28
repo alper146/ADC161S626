@@ -5,9 +5,6 @@ enable pin=D8=PB0-output
 SCLK=D9=PB1-output
 MISO=D10=PB2-input
 */
-#include <Wire.h>
-#include "LMP91000.h"
-#include <SPI.h>
 #define adc_clk 1
 #define adc_miso 2
 #define adc_enable 0
@@ -18,9 +15,6 @@ void setup() {
  DDRB&=~(1<<adc_miso);
 digitalWrite(8,HIGH);//disable 
 Serial.begin(115200);
-Wire.begin();
-
- 
 }
 
 void loop() {
