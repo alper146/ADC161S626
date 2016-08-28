@@ -29,8 +29,8 @@ unsigned int ADC161(void){
   PORTB|=(1<<adc_clk); //clock polarity=1;
   delay(1);
   PORTB&=~(1<<adc_enable); //enable
-  for (char i=0;i<8;i++){
-    __asm__("nop\n\t"); // slow down the frequency to 2 MHz
+  for (char i=0;i<7;i++){
+    __asm__("nop\n\t"); // slow down the frequency approx. to 2 MHz
     } 
 clk();
 clk();
@@ -46,12 +46,12 @@ for(char i=0; i<16; i++){
   
 void clk(void){
   PORTB&=~(1<<adc_clk);
-  for (char i=0;i<8;i++){
-    __asm__("nop\n\t"); // slow down the frequency to 2 MHz
+  for (char i=0;i<7;i++){
+    __asm__("nop\n\t"); // slow down the frequency approx. to 2 MHz
     }
   PORTB|=(1<<adc_clk);
-    for (char i=0;i<8;i++){
-    __asm__("nop\n\t"); // slow down the frequency to 2 MHz
+    for (char i=0;i<7;i++){
+    __asm__("nop\n\t"); 
     } 
   }
   
