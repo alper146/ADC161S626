@@ -1,6 +1,6 @@
 /*
 Configuration of ADC16S626.
-Uses bigbang method.
+Uses bitbang method.
 enable pin=D8=PB0-output
 SCLK=D9=PB1-output
 MISO=D10=PB2-input
